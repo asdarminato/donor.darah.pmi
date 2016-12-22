@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "812968579201",
+    "firebase_url": "https://bloodhub-aa766.firebaseio.com",
+    "project_id": "bloodhub-aa766",
+    "storage_bucket": "bloodhub-aa766.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812968579201:android:75ec74806cbb4e23",
+        "android_client_info": {
+          "package_name": "drproject.donordarahpmi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "812968579201-11bqqtetd1vhi1ba5t178rbous3fcg6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCk7v1ZD0htn7L8rAm3FZoGdTo530VlqHM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="drproject.donordarahpmi.MainActivity">
+    tools:context="drproject.donordarahpmi.About">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -22,20 +21,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <drproject.donordarahpmi.Tab.SlidingTabLayout
-        android:id="@+id/st1_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </drproject.donordarahpmi.Tab.SlidingTabLayout>
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_tabs"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        >
-
-    </android.support.v4.view.ViewPager>
+    <include layout="@layout/content_about" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -43,6 +29,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/icon_tambah"
-        tools:ignore="VectorDrawableCompat" />
-</LinearLayout>
+        app:srcCompat="@android:drawable/ic_dialog_email" />
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,119 +1,73 @@
 package drproject.donordarahpmi;
 
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import drproject.donordarahpmi.Tab.SlidingTabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText nusername;
-    private EditText npassword;
-
-    private Button nblogin;
-    private Button nbregister;
-
-    private FirebaseAuth mAuth;
-
-    private FirebaseAuth.AuthStateListener mAuthListener;
-
+    private SlidingTabLayout mSlidingTabLayout;
+    private ViewPager mViewPager;
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Donor Darah");
+        setSupportActionBar(toolbar);
 
-        mAuth = FirebaseAuth.getInstance();
+        mViewPager = (ViewPager)findViewById(R.id.vp_tabs);
+        mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager(),this));
 
-        nusername = (EditText) findViewById(R.id.username);
-        npassword = (EditText) findViewById(R.id.password);
+        mSlidingTabLayout = (SlidingTabLayout)findViewById(R.id.st1_tabs);
+        mSlidingTabLayout.setDistributeEvenly(true);
+        mSlidingTabLayout.setBackgroundColor(getResources().getColor(R.color.merahTua));
+        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.warnaIndikator));
+        mSlidingTabLayout.setCustomTabView(R.layout.tab_view, R.id.tv_tab);
+        mSlidingTabLayout.setViewPager(mViewPager);
 
-        nblogin = (Button) findViewById(R.id.blogin);
-        nbregister = (Button) findViewById(R.id.bregister);
-
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d("", "onAuthStateChanged:signed_in:" + user.getUid());
-                    Intent i = new Intent(MainActivity.this, Index_admin.class);
-                    startActivity(i);
-
-                } else {
-                    // User is signed out
-                    Log.d("", "onAuthStateChanged:signed_out");
-                }
-            }
-        };
-
-        nblogin.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startsignin();
-
-            }
-        });
-
-        nbregister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent i = new Intent(MainActivity.this, Register.class);
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent i = new Intent(MainActivity.this, About.class);
                 startActivity(i);
-
             }
         });
     }
 
-
     @Override
-    public void onStart() {
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     @Override
-    public void onStop() {
-        super.onStop();
-        FirebaseAuth.getInstance().signOut();
-        if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            Intent i = new Intent(MainActivity.this, About.class);
+            startActivity(i);
+            return true;
         }
-    }
 
-    private void startsignin() {
-        String username = nusername.getText().toString();
-        String password = npassword.getText().toString();
-
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-
-            Toast.makeText(MainActivity.this, "Username atau Password Kosong!", Toast.LENGTH_LONG).show();
-
-        } else {
-
-
-            mAuth.signInWithEmailAndPassword(username, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (!task.isSuccessful()) {
-                        Toast.makeText(MainActivity.this, "Login Bermasalah!", Toast.LENGTH_LONG).show();
-                    }
-                }
-            });
-        }
+        return super.onOptionsItemSelected(item);
     }
 }

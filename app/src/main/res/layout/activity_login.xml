@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#d32f2f"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="drproject.donordarahpmi.Login"
+    android:weightSum="1">
+
+
+    <ImageView
+        android:layout_width="129dp"
+        android:layout_height="110dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/donor"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.09" />
+
+    <EditText
+        android:id="@+id/username"
+        android:textColorHint="#c4c4c4"
+        android:padding="10dp"
+        android:background="#fff"
+        android:hint="Email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#c4c4c4"
+        android:inputType="textPassword"
+        android:padding="10dp"
+        android:background="#fff"
+        android:hint="Password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/blogin"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:background="#000"
+        android:layout_marginTop="10dp"
+        android:text="Login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/bregister"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:textColor="#fff"
+        android:background="#000"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"/>
+</LinearLayout>
+
+</ScrollView>

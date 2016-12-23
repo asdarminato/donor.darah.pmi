@@ -7,18 +7,33 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.GridLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 import drproject.donordarahpmi.Tab.SlidingTabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference rekam_user;
+
     private SlidingTabLayout mSlidingTabLayout;
     private ViewPager mViewPager;
+
+    public final String idSession = getIntent().getStringExtra("EXTRA_SESSION_ID");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         toolbar.setTitle("Donor Darah");
         setSupportActionBar(toolbar);
 
-        final String idSession = getIntent().getStringExtra("EXTRA_SESSION_ID");
+
+
+        rekam_user = database.getReference("rekam_medis").child(idSession);
 
         mViewPager = (ViewPager)findViewById(R.id.vp_tabs);
         mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager(),this));
@@ -43,8 +60,6 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
                 Intent i = new Intent(MainActivity.this, analisis_kesehatan.class);
                 i.putExtra("EXTRA_SESSION_ID",idSession);
                 startActivity(i);
@@ -75,5 +90,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        rekam_user.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                Iterable<DataSnapshot> children = dataSnapshot.getChildren();
+
+                for(DataSnapshot child : children){
+
+                }
+                Log.v("E_VALUE ","Data : "+ children);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 }

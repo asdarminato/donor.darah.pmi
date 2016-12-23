@@ -32,7 +32,7 @@ public class MyAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         Fragment frag = null;
         if(position == 0){
-            frag = new FragmentSatu();
+            frag = new RecyclerViewFragment();
         }else if(position == 1){
             frag = new FragmentDua();
         }else if(position == 2){

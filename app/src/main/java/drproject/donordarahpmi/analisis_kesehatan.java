@@ -96,8 +96,9 @@ public class analisis_kesehatan extends AppCompatActivity {
                     if(idSession != null){
 
                         String tgl_hari_ini = c.getTime().toString();
-                        rekam_user = database.getReference("rekam_medis").child(idSession).child(tgl_hari_ini).child("status");
-                        rekam_user.setValue(status);
+                        rekam_user = database.getReference("rekam_medis").child(idSession).child(tgl_hari_ini);
+                        rekam_user.child("status").setValue(status);
+                        rekam_user.child("tanggal").setValue(tgl_hari_ini);
                     }else{
                         System.out.println("kosong");
                     }

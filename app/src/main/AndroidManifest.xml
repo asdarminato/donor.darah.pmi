@@ -28,10 +28,14 @@
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:label="MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".analisis_kesehatan2"
+            android:label="@string/title_activity_analisis_kesehatan2"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

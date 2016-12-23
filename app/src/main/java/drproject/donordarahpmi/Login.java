@@ -41,6 +41,11 @@ public class Login extends AppCompatActivity {
         nblogin = (Button) findViewById(R.id.blogin);
         nbregister = (Button) findViewById(R.id.bregister);
 
+        FirebaseAuth.getInstance().signOut();
+        if (mAuthListener != null) {
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+
         mAuthListener = new FirebaseAuth.AuthStateListener() {
 
             @Override
@@ -49,7 +54,9 @@ public class Login extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
                     Log.d("", "onAuthStateChanged:signed_in:" + user.getUid());
+
                     Intent i = new Intent(Login.this, MainActivity.class);
+                    i.putExtra("EXTRA_SESSION_ID",user.getUid());
                     startActivity(i);
 
                 } else {

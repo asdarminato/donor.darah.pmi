@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import drproject.donordarahpmi.Tab.SlidingTabLayout;
 
 public class MainActivity extends AppCompatActivity {
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Donor Darah");
         setSupportActionBar(toolbar);
+
+        final String idSession = getIntent().getStringExtra("EXTRA_SESSION_ID");
 
         mViewPager = (ViewPager)findViewById(R.id.vp_tabs);
         mViewPager.setAdapter(new MyAdapter(getSupportFragmentManager(),this));
@@ -41,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                Intent i = new Intent(MainActivity.this, About.class);
+                Intent i = new Intent(MainActivity.this, analisis_kesehatan.class);
+                i.putExtra("EXTRA_SESSION_ID",idSession);
                 startActivity(i);
             }
         });
@@ -63,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent i = new Intent(MainActivity.this, About.class);
+            Intent i = new Intent(MainActivity.this, Login.class);
             startActivity(i);
+            FirebaseAuth.getInstance().signOut();
             return true;
         }
 

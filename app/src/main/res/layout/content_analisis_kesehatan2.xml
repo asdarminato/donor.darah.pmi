@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_analisis_kesehatan"
+    android:id="@+id/content_analisis_kesehatan2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -10,14 +10,19 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="drproject.donordarahpmi.analisis_kesehatan"
-    tools:showIn="@layout/activity_analisis_kesehatan">
+    tools:context="drproject.donordarahpmi.analisis_kesehatan2"
+    tools:showIn="@layout/activity_analisis_kesehatan2">
 
     <TextView
-        android:text="1. Berat badan min 45 Kg? "
+        android:id="@+id/hasil1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="1. Umur Anda Antara 17-65 Tahun? "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/berat"
+        android:id="@+id/umur"
         android:textSize="18sp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -27,30 +32,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:id="@+id/RadioBerat"
-        android:layout_below="@+id/berat">
+        android:id="@+id/RadioUmur"
+        android:layout_below="@+id/umur">
         <RadioButton
             android:text="Ya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RBeratYa"
+            android:id="@+id/RUmurYa"
             android:checked="false" />
 
         <RadioButton
             android:text="Tidak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RBeratTidak"
+            android:id="@+id/RUmurTidak"
             android:checked="false" />
     </RadioGroup>
 
     <TextView
-        android:text="2. Tekanan darah(Stl 100-170,Dtl 70-100):"
+        android:text="2. Ada Penyakit(HIV/AIDS/Hepatitis/Diabetes):"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="23dp"
-        android:id="@+id/tekanan"
-        android:layout_below="@+id/RadioBerat"
+        android:id="@+id/penyakit"
+        android:layout_below="@+id/RadioUmur"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="18sp" />
@@ -59,33 +64,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/tekanan"
-        android:id="@+id/RadioTekanan">
+        android:layout_below="@+id/penyakit"
+        android:id="@+id/RadioPenyakit">
 
         <RadioButton
             android:text="Ya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RTekananYa"
+            android:id="@+id/RPenyakitYa"
             android:checked="false" />
 
         <RadioButton
             android:text="Tidak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RTekananTidak"
+            android:id="@+id/RPenyakitTidak"
             android:checked="false" />
     </RadioGroup>
 
 
 
     <TextView
-        android:text="3. Kadar hemoglobin anda(12,5 g -17 g):"
+        android:text="3. Apakah Anda Pecandu Alkohol:"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/kadar"
+        android:id="@+id/alkohol"
         android:textSize="18sp"
-        android:layout_below="@+id/RadioTekanan"
+        android:layout_below="@+id/RadioPenyakit"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="19dp" />
@@ -93,30 +98,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/kadar"
-        android:id="@+id/RadioKadar">
+        android:layout_below="@+id/alkohol"
+        android:id="@+id/RadioAlkohol">
 
         <RadioButton
             android:text="Ya"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RKadarYa"
+            android:id="@+id/RAlkoholYa"
             android:checked="false" />
 
         <RadioButton
             android:text="Tidak"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/RKadarTidak"
+            android:id="@+id/RAlkoholTidak"
             android:checked="false" />
     </RadioGroup>
     <TextView
-        android:text="4. Tidur malam kurang dari 5 jam?"
+        android:text="4.Anda Bergantung Pada Obat-Obatan?"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:id="@+id/tidur"
-        android:layout_below="@+id/RadioKadar"
+        android:id="@+id/obat"
+        android:layout_below="@+id/RadioAlkohol"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="15dp"
@@ -127,32 +132,32 @@
         android:text="Check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/buttonCheck"
+        android:id="@+id/buttonCheck2"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
     <RadioGroup
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-        android:id="@+id/RadioTidur"
-        android:layout_below="@+id/tidur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/RadioObat"
+        android:layout_below="@+id/obat"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
 
-    <RadioButton
-        android:text="Ya"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/RTidurYa"
-        android:checked="false" />
+        <RadioButton
+            android:text="Ya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RObatYa"
+            android:checked="false" />
 
-    <RadioButton
-        android:text="Tidak"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/RTidurTidak"
-        android:checked="false" />
-</RadioGroup>
+        <RadioButton
+            android:text="Tidak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RObatTidak"
+            android:checked="false" />
+    </RadioGroup>
 
 </RelativeLayout>

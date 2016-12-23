@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_analisis_kesehatan"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="drproject.donordarahpmi.analisis_kesehatan"
+    tools:showIn="@layout/activity_analisis_kesehatan">
+
+    <TextView
+        android:text="1. Berat badan min 45 Kg? "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/berat"
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/RadioBerat"
+        android:layout_below="@+id/berat">
+        <RadioButton
+            android:text="Ya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RBeratYa"
+            android:checked="false" />
+
+        <RadioButton
+            android:text="Tidak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RBeratTidak"
+            android:checked="false" />
+    </RadioGroup>
+
+    <TextView
+        android:text="2. Tekanan darah(Stl 100-170,Dtl 70-100):"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:id="@+id/tekanan"
+        android:layout_below="@+id/RadioBerat"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tekanan"
+        android:id="@+id/RadioTekanan">
+
+        <RadioButton
+            android:text="Ya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RTekananYa"
+            android:checked="false" />
+
+        <RadioButton
+            android:text="Tidak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RTekananTidak"
+            android:checked="false" />
+    </RadioGroup>
+
+
+
+    <TextView
+        android:text="3. Kadar hemoglobin anda(12,5 g -17 g):"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/kadar"
+        android:textSize="18sp"
+        android:layout_below="@+id/RadioTekanan"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/kadar"
+        android:id="@+id/RadioKadar">
+
+        <RadioButton
+            android:text="Ya"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RKadarYa"
+            android:checked="false" />
+
+        <RadioButton
+            android:text="Tidak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/RKadarTidak"
+            android:checked="false" />
+    </RadioGroup>
+    <TextView
+        android:text="4. Tidur malam kurang dari 5 jam?"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/tidur"
+        android:layout_below="@+id/RadioKadar"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:textSize="18sp" />
+
+    <Button
+        android:text="Check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonCheck"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioGroup
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+        android:id="@+id/RadioTidur"
+        android:layout_below="@+id/tidur"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+    <RadioButton
+        android:text="Ya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RTidurYa"
+        android:checked="false" />
+
+    <RadioButton
+        android:text="Tidak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/RTidurTidak"
+        android:checked="false" />
+</RadioGroup>
+
+</RelativeLayout>

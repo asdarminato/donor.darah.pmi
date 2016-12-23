@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -71,7 +70,7 @@ public class Register extends AppCompatActivity {
                     }
                     else {
                         Toast.makeText(Register.this, "Registerasi Berhasil :)", Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(Register.this, MainActivity.class);
+                        Intent i = new Intent(Register.this, Login.class);
                         startActivity(i);
                         FirebaseAuth.getInstance().signOut();
                     }

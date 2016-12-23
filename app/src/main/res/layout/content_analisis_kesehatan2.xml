@@ -12,7 +12,6 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="drproject.donordarahpmi.analisis_kesehatan2"
     tools:showIn="@layout/activity_analisis_kesehatan2">
-
     <TextView
         android:id="@+id/hasil1"
         android:layout_width="match_parent"
@@ -159,5 +158,4 @@
             android:id="@+id/RObatTidak"
             android:checked="false" />
     </RadioGroup>
-
 </RelativeLayout>

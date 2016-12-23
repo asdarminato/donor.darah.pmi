@@ -8,8 +8,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="fragment_satu">Fragment Satu</string>
-    <string name="fragment_dua">Fragment Dua</string>
+    <string name="fragment_dua">Manfaat Donor Darah Bagi Penerima</string>
     <string name="fragment_tiga">Fragment Tiga</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_analisis_kesehatan2">analisis_kesehatan2</string>
+    <string name="isi1">Manfaat Donor Darah bagi Penerima Untuk poin pertama yaitu manfaat bagi penerima donor darah, saya rasa kita semua sudah tahu, donor darah dapat bermanfaat untuk membantu mereka yang kekurangan darah, darah akan diberikan melalui proses yang dinamakan transfusi darah yang bertujuan untuk menyelamatkan jiwa seseorang. contohnya: Transfusi darah untuk korban kecelakaan yang banyak kehilangan darah. Penderita penyakit tertentu yang akan menjalani operasi besar. Kasus-kasus tertentu demam berdarah. Untuk pasien talasemia mayor. dan masih banyak yang lainnya.</string>
+    <string name="isi2">Donor darah dapat meningkatkan kesehatan jantung, menurunkan level iron, menurunkan resiko kanker, memperbaharui metabolisme darah, dan dapat mempercepat pembakaran kalori dalam tubuh si pendonor. oleh sebab itu donor darah sangat bermanfaat bagi pendonor dan penerimanya. bantulah sesama agar hidup terasa lebih bermakna :)</string>
+    <string name="judul2">Manfaat Donor Darah Bagi Pendonor</string>
 </resources>

@@ -48,8 +48,8 @@ public class RecyclerViewFragment extends Fragment {
     protected String [] mDataset2;
     protected int [] mDataset3;
 
-    String [] status ={"Dibolehkan","Dilarang","Ditunda"};
-    String [] tanggal = {"12-12-12","11-11-11","10-10-10"};
+    String [] status ={"Dibolehkan","Dilarang","Ditunda","Dilarang","Dilarang","Ditunda"};
+    String [] tanggal = {"12-12-12","11-11-11","10-10-10","12-12-14","11-11-15","10-10-16"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
